@@ -1,6 +1,7 @@
 package com.otus.data;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 public enum MonthData {
     JANUARY("января", 1),
@@ -34,6 +35,12 @@ public enum MonthData {
     public static MonthData getDate(String name) {
         return Arrays.stream(MonthData.values())
                 .filter((MonthData monthsData) -> monthsData.getName().equals(name))
+                .findFirst().get();
+    }
+
+    public static MonthData getName(int number) {
+        return Arrays.stream(MonthData.values())
+                .filter((MonthData monthsData) -> monthsData.getNumber() == number)
                 .findFirst().get();
     }
 }

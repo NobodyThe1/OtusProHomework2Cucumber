@@ -14,6 +14,6 @@ public class AnyPage extends AbsPage<AnyPage>{
     }
 
     public void rightPageShouldBeOpened(String title) {
-        Assertions.assertEquals((driver.findElement(By.xpath(String.format(courseTitleLocator, title))).getText()), title);
+        Assertions.assertEquals((guiceScoped.driver.findElement(By.xpath(String.format(courseTitleLocator, title))).getText()), title);
     }
 }

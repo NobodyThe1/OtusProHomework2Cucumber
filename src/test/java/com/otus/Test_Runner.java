@@ -2,8 +2,6 @@ package com.otus;
 
 import io.cucumber.junit.platform.engine.Cucumber;
 
+@Cucumber
 public class Test_Runner {
-    @Cucumber
-    public class Runner_Test {
-    }
 }

@@ -11,19 +11,19 @@ import com.otus.waiters.Waiter;
 
 public abstract class AbsPageObject<T> {
 
-    protected GuiceScoped guiceScoped;
     protected Actions actions;
-    protected Waiter waiter;
-    protected WebDriver driver;
+
+    @Inject
+    public GuiceScoped guiceScoped;
+
+    @Inject
+    public Waiter waiter;
 
     @Inject
     public AbsPageObject (GuiceScoped guiceScoped) {
         this.guiceScoped = guiceScoped;
-        this.driver = guiceScoped.driver;
         this.actions = new Actions(guiceScoped.driver);
-        this.waiter = new Waiter(guiceScoped.driver);
-
-        PageFactory.initElements(this.guiceScoped.driver,  this);
+        PageFactory.initElements(this.guiceScoped.driver, this);
     }
 
     protected String courseTitleLocator = "//*[contains (text(), '%s')]";

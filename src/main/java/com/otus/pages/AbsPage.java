@@ -23,6 +23,6 @@ public abstract class AbsPage<T> extends AbsPageObject<T> {
         return "";
     }
     public void open() {
-        driver.get(baseUrl + getPath());
+        guiceScoped.driver.get(baseUrl + getPath());
     }
 }
