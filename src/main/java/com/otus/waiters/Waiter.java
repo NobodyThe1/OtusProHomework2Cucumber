@@ -15,6 +15,7 @@ public class Waiter {
     @Inject
     private GuiceScoped guiceScoped;
 
+    @Inject
     public Waiter(GuiceScoped guiceScoped) {
         this.guiceScoped = guiceScoped;
     }

@@ -13,9 +13,6 @@ import java.util.Locale;
 public class WebDriverFactory implements IWebDriverFactory {
 
     private String browserName = System.getProperty("browser", "chrome").toLowerCase(Locale.ROOT);
-    public String getBrowserName() {
-        return browserName;
-    }
 
     public EventFiringWebDriver create(String browserName) {
         switch (browserName) {
@@ -27,7 +24,7 @@ public class WebDriverFactory implements IWebDriverFactory {
                 WebDriverManager.firefoxdriver().setup();
                 return new EventFiringWebDriver(new FirefoxDriver());
             }
-            case "opera": {
+                case "opera": {
                 WebDriverManager.operadriver().setup();
                 return new EventFiringWebDriver(new OperaDriver());
             }
