@@ -1,6 +1,6 @@
 package com.otus.factories;
 
-import com.opera.core.systems.OperaDriver;
+import org.openqa.selenium.opera.OperaDriver;
 import com.otus.exceptions.BrowserNotSupportedException;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;

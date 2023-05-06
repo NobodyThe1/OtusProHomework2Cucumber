@@ -75,7 +75,7 @@
         <profile>
             <id>dev</id>
             <properties>
-                <base.url>https://test.otus.ru</base.url>
+                <base.url>https://otus.ru</base.url>
             </properties>
         </profile>
     </profiles>
