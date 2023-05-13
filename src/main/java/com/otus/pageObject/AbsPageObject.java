@@ -26,7 +26,7 @@ public abstract class AbsPageObject<T> {
         PageFactory.initElements(this.guiceScoped.driver, this);
     }
 
-    protected String courseTitleLocator = "//*[contains (text(), '%s')]";
+    protected String courseTitleLocator = "//*[contains(@class, 'lessons__new-item-title')][contains (text(), 's')]";
 
     protected void moveAndClick (WebElement element) {
         waiter.waitForCondition(ExpectedConditions.visibilityOf(element));

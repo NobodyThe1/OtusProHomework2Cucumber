@@ -24,22 +24,17 @@ public class CourseTileSteps {
         courseTile.findCourseByTitle(title);
     }
 
-    @Если("Кликнуть на ранний плитку курса")
+    @Если("Кликнуть на ранний плитку курса и вывести название курса в консоль")
     public void clickEarlierCourse() {
         courseTile.getEarlierLaterCourse(true);
     }
 
-    @Если("Кликнуть на поздний плитку курса")
+    @Если("Кликнуть на поздний плитку курса и вывести название курса в консоль")
     public void clickLaterCourse() {
         courseTile.getEarlierLaterCourse(false);
     }
 
     @Тогда("Откроется страница курса")
     public void getCoursePage() {
-    }
-
-    @Также("Вывести название и дату курса в консоль")
-    public void вывестиНазваниеИДатуКурсаВКонсоль() {
-
     }
 }
