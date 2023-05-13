@@ -1,7 +1,6 @@
 package com.otus.steps;
 
 import com.google.inject.Inject;
-import com.otus.pages.MainPage;
 import com.otus.pages.TrainingCoursesPage;
 import io.cucumber.java.ru.Если;
 import io.cucumber.java.ru.Пусть;
@@ -18,8 +17,13 @@ public class TrainingCoursesPageSteps {
     }
 
     @Если("Выбран самый дешёвый курс")
-    public void выбранСамыйДешёвыйКурс() {
-        
+    public void chooseCheaper() {
+        trainingCoursesPage.getCheapExpensiveCourse(true);
+    }
+
+    @Если("Выбран самый дорогой курс")
+    public void choseMoreExpensive () {
+        trainingCoursesPage.getCheapExpensiveCourse(false);
     }
 
     @Тогда("Откроется верная страница")
