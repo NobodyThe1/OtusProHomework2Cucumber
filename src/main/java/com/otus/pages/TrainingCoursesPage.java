@@ -47,12 +47,9 @@ public class TrainingCoursesPage extends AbsPage<TrainingCoursesPage> {
                 .reduce(reduceImpl)
                 .map((Integer integer) -> {
                     String finalPrice = integer.toString();
-                    return finalPrice;
-                })
-                .map((String finalPrice) -> {
-                    return guiceScoped.driver.findElement(By.xpath(String.format(coursePriceLocator, finalPrice)));
-                })
-                .get()
-                .click();
+                    System.out.println(finalPrice);
+                        List<WebElement> elements = guiceScoped.driver.findElements(By.xpath(String.format(coursePriceLocator, finalPrice)));
+                        return ((JavascriptExecutor)guiceScoped.driver).executeScript("arguments[0].click()", elements.get(0));
+                });
     }
 }
